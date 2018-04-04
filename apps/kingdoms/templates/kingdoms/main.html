@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Three Kingdoms Fanpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'kingdoms/css/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="video_contain">
+        <video id='vid' muted>
+            <source src="{% static 'kingdoms/media/tkvid.webm' %}" type="video/webm">
+            <source src="{% static 'kingdoms/media/tkvid.mp4' %}" type="video/mp4">
+            Web browser doesn't support background
+        </video>
+    </div>
+    <button id = "audiobutton"><i class="fa fa-music"></i></button>
+    <audio  id = "audio" controls>
+        <source src="{% static 'kingdoms/media/TradChiMusic.mp3' %}" type="audio/mpeg">
+    </audio>
+    <div class='navwrapper'>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">
+                    <img class='navbar' id= 'home' style = "width: 75px;" src="{% static 'kingdoms/media/home.png' %}">
+                </a>
+                <h4 class='navbar' id='home' hidden>Home</h4>
+            </li>
+            <li>
+                <a href="{% url 'kingdoms:maps' %}">
+                    <img class='navbar' id= 'maps' style = "width: 90px;" src="{% static 'kingdoms/media/maps.png' %}">
+                </a>
+                <h4 class='navbar' id='maps' hidden>Maps</h4>
+            </li>
+            <li>
+                <a href="{% url 'characters' %}">
+                    <img class='navbar' id= 'characters' style = "width: 90px;" src="{% static 'kingdoms/media/characters.png' %}">
+                </a>
+                <h4 class='navbar' id='characters' hidden>Characters</h4>
+            </li>
+        </ul>
+    </div>  
+    <div class='content'>
+        <span id = 'lines'></span>
+        <h1 class = "contentText">Three Kingdoms Fan Website</h1>
+        <span id = 'lines'></span>
+        <p class = "contentText">
+            Three Kingdoms is a 2010 Chinese television series based on the events in the late Eastern Han dynasty and the 
+            Three Kingdoms period. The plot is adapted from the 14th century historical novel Romance of the Three Kingdoms 
+            and other stories about the Three Kingdoms period. Directed by Gao Xixi, the series had a budget of over 160 million 
+            RMB (30 million USD) and took five years of pre-production work. 
+            Shooting of the series commenced in October 2008, and it was released in China in May 2010.
+        </p>
+        <span id = 'lines'></span>
+        <p class = "contentText">
+            Three Kingdoms set a record as the most expensive small screen series so far in China's television 
+            history, having been sold to four regional TV broadcasters at the price of 160 million yuan.
+            The series was a commercial success in China and dominated ratings, but has caused controversy among 
+            fans with many commenting that the TV series has veered too far from the classic novel. It has 
+            also been sold to over 20 countries, earning an estimated 800 million RMB (133.3 million USD) in total as 
+            of May 2012.
+        </p>
+        <span id = 'lines'></span>
+        <p class = "contentText"> Additional content can be added. </p>
+        <span id = 'lines'></span>
+    </div>
+    <div class='footer'>
+        <h5>Thanks to AWS for providing the server that this runs on and wikipedia for the information provided</h5>
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+    $( "img#home" ).mouseenter(function() {
+        $( "h4#home" ).fadeIn( 500 );
+    });
+    $( "img#home" ).mouseleave(function() {
+        $( "h4#home" ).fadeOut ( 750 );
+    });
+    $( "img#maps" ).mouseenter(function() {
+        $( "h4#maps" ).fadeIn( 500 );
+    });
+    $( "img#maps" ).mouseleave(function() {
+        $( "h4#maps" ).fadeOut ( 750 );
+    });
+    $( "img#characters" ).mouseenter(function() {
+        $( "h4#characters" ).fadeIn( 500 );
+    });
+    $( "img#characters" ).mouseleave(function() {
+        $( "h4#characters" ).fadeOut ( 750 );
+    });
+    $("#audio").hide();
+    $( '#audio' ).click(function() {
+        $( '#audio' ).toggle( "slide" );
+    });
+    $( "#audiobutton" ).click(function() {
+        $( "#audio" ).toggle( "slide" );
+    });
+    document.getElementById('vid').play();
+    document.getElementById('vid').on(function(){
+        $(this).volume= 0.0;
+    });
+});
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'kingdoms/css/style.css' %}" />
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <button id = "audiobutton"><i class="fa fa-music"></i></button>
+    <audio  id = "audio" controls>
+        <source src="{% static 'kingdoms/media/TradChiMusic.mp3' %}" type="audio/mpeg">
+    </audio>
+    <div class='navwrapper'>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">
+                    <img class='navbar' id= 'home' style = "width: 75px;" src="{% static 'kingdoms/media/home.png' %}">
+                </a>
+                <h4 class='navbar' id='home' hidden>Home</h4>
+            </li>
+            <li>
+                <a href="{% url 'kingdoms:maps' %}">
+                    <img class='navbar' id= 'maps' style = "width: 90px;" src="{% static 'kingdoms/media/maps.png' %}">
+                </a>
+                <h4 class='navbar' id='maps' hidden>Maps</h4>
+            </li>
+            <li>
+                <a href="{% url 'characters' %}">
+                    <img class='navbar' id= 'characters' style = "width: 90px;" src="{% static 'kingdoms/media/characters.png' %}">
+                </a>
+                <h4 class='navbar' id='characters' hidden>Characters</h4>
+            </li>
+        </ul>
+    </div>  
+    <div id ='mapContent'>
+        <img class="mySlides" src="{% static 'kingdoms/media/map1.png' %}">
+        <img class="mySlides" src="{% static 'kingdoms/media/map2.png' %}">
+        <img class="mySlides" src="{% static 'kingdoms/media/map3.png' %}">
+        <img class="mySlides" src="{% static 'kingdoms/media/map4.png' %}">
+        <img class="mySlides" src="{% static 'kingdoms/media/map5.png' %}">
+        <div id="mapButtons">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+    </div>
+    <div class='footer'>
+        <h5>Maps courtesy of Jolt from http://the-scholars.com/viewtopic.php?f=5&t=23206&start=40</h5>
+    </div>
+</body>
+
+
+<script>
+$(document).ready(function() {
+    $( "img#home" ).mouseenter(function() {
+        $( "h4#home" ).fadeIn( 500 );
+    });
+    $( "img#home" ).mouseleave(function() {
+        $( "h4#home" ).fadeOut ( 750 );
+    });
+    $( "img#maps" ).mouseenter(function() {
+        $( "h4#maps" ).fadeIn( 500 );
+    });
+    $( "img#maps" ).mouseleave(function() {
+        $( "h4#maps" ).fadeOut ( 750 );
+    });
+    $( "img#characters" ).mouseenter(function() {
+        $( "h4#characters" ).fadeIn( 500 );
+    });
+    $( "img#characters" ).mouseleave(function() {
+        $( "h4#characters" ).fadeOut ( 750 );
+    });
+    $("#audio").hide();
+    $( '#audio' ).click(function() {
+        $( '#audio' ).toggle( "slide" );
+    });
+    $( "#audiobutton" ).click(function() {
+        $( "#audio" ).toggle( "slide" );
+    });
+});
+// carousel functionality
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+</script>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Characters</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'kingdoms/css/style.css' %}" />
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <button id = "audiobutton"><i class="fa fa-music"></i></button>
+  <audio  id = "audio" controls>
+      <source src="{% static 'kingdoms/media/TradChiMusic.mp3' %}" type="audio/mpeg">
+  </audio>
+  <div class='navwrapper'>
+      <ul>
+          <li>
+              <a href="{% url 'index' %}">
+                  <img class='navbar' id= 'home' style = "width: 75px;" src="{% static 'kingdoms/media/home.png' %}">
+              </a>
+              <h4 class='navbar' id='home' hidden>Home</h4>
+          </li>
+          <li>
+              <a href="{% url 'kingdoms:maps' %}">
+                  <img class='navbar' id= 'maps' style = "width: 90px;" src="{% static 'kingdoms/media/maps.png' %}">
+              </a>
+              <h4 class='navbar' id='maps' hidden>Maps</h4>
+          </li>
+          <li>
+              <a href="{% url 'characters' %}">
+                  <img class='navbar' id= 'characters' style = "width: 90px;" src="{% static 'kingdoms/media/characters.png' %}">
+              </a>
+              <h4 class='navbar' id='characters' hidden>Characters</h4>
+          </li>
+      </ul>
+  </div>
+  <div id= 'charcontent'>
+    <img class = 'boxes' id= 'caocao' title='CaoCao is the main villian of the series (or hero)' src="{% static 'kingdoms/media/caocao.jpg' %}">
+    <img class = 'boxes' id = 'lubu' title='Lubu riding Red Hare (the name of the horse)' src="{% static 'kingdoms/media/lubu.jpg' %}">
+    <img class = 'boxes' id = 'kongming' title='Konging helps Lu Bei work with strategy' src="{% static 'kingdoms/media/kongming.jpg' %}">
+    <img class = 'boxes' title='Default tooltip' src="" alt="noimg">
+  </div>
+    <div class="charDesc">
+        <div class="charDescWrap">
+            <p class= "desc" id="caocaoDesc">Cao Cao ([tsʰǎu tsʰáu]; Chinese: 曹操; 155 – 15 March 220),[1] courtesy name Mengde, was a Chinese warlord and the penultimate Chancellor of the Eastern Han dynasty who rose to great power in the final years of the dynasty. As one of the central figures of the Three Kingdoms period, he laid the foundations for what was to become the state of Cao Wei and was posthumously honoured as "Emperor Wu of Wei". He is often portrayed as a cruel and merciless tyrant in subsequent literature; however, he has also been praised as a brilliant ruler and military genius who treated his subordinates like his family.
+                    uring the fall of the Eastern Han dynasty, Cao Cao was able to secure the most populated and prosperous cities of the central plains and northern China. Cao Cao had much success as the Han chancellor, but his handling of the Han emperor Liu Xie was heavily criticised and resulted in a continued and then escalated civil war. Opposition directly gathered around warlords Liu Bei and Sun Quan, whom Cao Cao was unable to quell.
+                    Cao Cao was also skilled in poetry and martial arts and wrote many war journals.
+            </p>
+            <p class= "desc" id="lubuDesc">Lü Bu (died February 199),[1][2] courtesy name Fengxian, was a military general and warlord who lived during the late Eastern Han dynasty of Imperial China. Originally a subordinate of a minor warlord Ding Yuan, he betrayed and murdered Ding and defected to Dong Zhuo, the warlord who controlled the Han central government in the early 190s. In 192, he turned against Dong Zhuo and killed him after being instigated by Wang Yun and Shisun Rui, but was later defeated and driven away by Dong Zhuo's followers.
+                    From 192 to mid 195, Lü Bu wandered around central and northern China, consecutively seeking shelter under warlords such as Yuan Shu, Yuan Shao and Zhang Yang. In 194, he managed to take control of Yan Province from the warlord Cao Cao with help from defectors from Cao's side, but Cao took back his territories within two years. In 196, Lü Bu turned against Liu Bei, who had offered him refuge in Xu Province, and seized control of the province from his host. Although he had agreed to an alliance with Yuan Shu earlier, he severed ties with him after Yuan declared himself emperor – an act deemed treasonous against the Han emperor – and joined Cao Cao and others in attacking the pretender. However, in 198, he sided with Yuan Shu again and came under attack by the combined forces of Cao Cao and Liu Bei, resulting in his defeat at the Battle of Xiapi in 199. He was captured and executed on Cao Cao's order.
+                    Although Lü Bu is described in historical and fictional sources as an exceptionally mighty warrior, he was also notorious for his temperamental behaviour. He switched allegiances erratically and freely betrayed his allies, and was noted for his poor planning and management skills. He was always suspicious of others and could not control his subordinates. All these factors ultimately led to his downfall. In the 14th-century historical novel Romance of the Three Kingdoms, the details of his life are dramatised and some fictitious elements – including his romance with the fictional maiden Diaochan – are added to portray him as a nearly unchallenged warrior who was also a ruthless and impulsive brute bereft of morals.
+            </p>
+            <p class= "desc" id="kongmingDesc">Zhuge Liang (181–234),[2] courtesy name Kongming, was a Chinese politician, military strategist, writer, engineer and inventor. He served as the Imperial Chancellor (or Prime Minister) and regent of the state of Shu Han during the Three Kingdoms period. He is recognised as the most accomplished strategist of his era, and has been compared to Sun Tzu, the author of The Art of War.[3] Often depicted wearing a Taoist robe and holding a hand fan made of crane feathers,[4] Zhuge Liang was an important military strategist, statesman and accomplished scholar and inventor. His reputation as an intelligent and learned scholar grew even while he was living in relative seclusion, earning him the nickname "Wolong" or "Fulong" (both literally mean "Crouching Dragon").
+                    Though Confucian oriented,[5] Zhuge was also a self-avowed "Legalist".[6] He compared himself with Guan Zhong,[6] developing Shu's agriculture and industry to become a regional power.[7] He attached great importance to the works of Shen Buhai and Han Fei,[8] refusing to indulge local elites and adopting strict, but fair and clear laws. In remembrance of his governance, local people maintained shrines to him for ages.[9]
+                    Zhuge is an uncommon two-character Chinese compound family name. His name – even his surname alone – has become synonymous with loyalty, intelligence and strategy in Chinese culture.[citation needed] In 760, when Emperor Suzong of the Tang dynasty built a temple to honour Jiang Ziya, he had sculptures of Zhuge Liang and another nine famous historical military generals/strategists – Bai Qi, Han Xin, Li Jing, Li Shiji, Zhang Liang, Tian Rangju, Sun Tzu, Wu Qi and Yue Yi – placed in the temple flanking Jiang Ziya's statue.[10]
+            </p>
+            <p class= "desc" id="nodesc">No description, intentionally left blank.</p>
+        </div>  
+    </div>
+</body>
+<script>
+  $(document).ready(function() {
+      $( "img#home" ).mouseenter(function() {
+          $( "h4#home" ).fadeIn( 500 );
+      });
+      $( "img#home" ).mouseleave(function() {
+          $( "h4#home" ).fadeOut ( 750 );
+      });
+      $( "img#maps" ).mouseenter(function() {
+          $( "h4#maps" ).fadeIn( 500 );
+      });
+      $( "img#maps" ).mouseleave(function() {
+          $( "h4#maps" ).fadeOut ( 750 );
+      });
+      $( "img#characters" ).mouseenter(function() {
+          $( "h4#characters" ).fadeIn( 500 );
+      });
+      $( "img#characters" ).mouseleave(function() {
+          $( "h4#characters" ).fadeOut( 750 );
+      });
+      $("#audio").hide();
+      $( '#audio' ).click(function() {
+          $( '#audio' ).toggle( "slide" );
+      });
+      $( "#audiobutton" ).click(function() {
+          $( "#audio" ).toggle( "slide" );
+      });
+      $( ".charDesc ").hide();
+      $( ".boxes" ).click(function(){
+        $( ".charDesc" ).fadeIn( 500 );
+        var id = this.id;
+        var clicked = false;
+        if (clicked == false){
+            clicked = true;
+        }
+        if (clicked == true){
+            $( ".desc" ).fadeOut( 250 );
+        }
+        if(id == 'caocao'){
+            $("#caocaoDesc").fadeIn( 750 );
+        }
+        else if (id == 'lubu'){
+            $("#lubuDesc").fadeIn( 750 );
+        }
+        else if (id == 'kongming'){
+            $("#kongmingDesc").fadeIn( 750 );
+        }
+        else {
+            $("#nodesc").fadeIn( 750 );
+        }
+      });
+  });
+</script>
+</html>
